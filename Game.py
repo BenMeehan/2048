@@ -4,6 +4,10 @@ from math import floor,log10
 # Constants 
 new_values=[2,4]
 winning_value=2048
+MAX_DIGITS=floor(log10(winning_value)+1) 
+
+# Globals
+location=None # Position of the newly added value. Used for coloring.
 
 class Game:
     def __init__(self,n):           
@@ -140,8 +144,10 @@ class Game:
     
     # Method for putting an new value in an empty cell
     def set_new_value(self):        
+        global location
         self.refresh_empty()
         x,y=random.choice(self.empty)       # Select a random empty cell
+        location=(x,y)
         value=random.choice(new_values)
         self.empty.remove((x,y))
         self.board[x][y]=value
@@ -155,15 +161,25 @@ class Game:
             
             for j in range(self.n):
                 val=self.board[i][j]
-                if val==-1:                 # Check if cell is empty. ie., -1 
-                    print("     ",end=" ")
                 
+                # Check if cell is empty. ie., -1 
+                if val==-1:                
+                    print("     ",end=" ")
+
                 else:   
+                    # Print spaces
                     digit=floor(log10(val)+1) 
-                    for k in range((4-digit)):
+                    for k in range((MAX_DIGITS-digit)):
                         print(" ",end="")
-                    print(" ",end="")                                 
-                    print(val,end=" ")
+                    print(" ",end="")  
+
+                    # Print newly added value in red
+                    if (i,j)==location:
+                        print(f"\033[91m{val}\033[00m",end=" ")
+                    else:
+                        print(val,end=" ")
+
                 print("|",end="")
+
             print()
             print(f"{'-'*29}")       
