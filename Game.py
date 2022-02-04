@@ -2,9 +2,9 @@ import random
 from math import floor,log10
 
 # Constants 
-new_values=[2,4]
-winning_value=2048
-MAX_DIGITS=floor(log10(winning_value)+1) 
+NEW_VALUES=[2,4]
+WINNING_VALUE=2048
+MAX_DIGITS=floor(log10(WINNING_VALUE)+1) 
 
 # Globals
 location=None # Position of the newly added value. Used for coloring.
@@ -22,7 +22,7 @@ class Game:
             x,y=self.get_random_position()
             while (x,y) in seen:        # While loop to make sure that the two cells are not the same
                 x,y=self.get_random_position()
-            val=random.choice(new_values)   # Choose a random value between 2 or 4
+            val=random.choice(NEW_VALUES)   # Choose a random value between 2 or 4
             self.board[x][y]=val 
             seen.append((x,y))
         self.refresh_empty()
@@ -86,7 +86,7 @@ class Game:
                     v=2*stack[-1]
 
                     # if 2048 is reached then return [] denoting victory
-                    if v==winning_value: 
+                    if v==WINNING_VALUE: 
                         return []
 
                     # Empty the stack into result array
@@ -148,7 +148,7 @@ class Game:
         self.refresh_empty()
         x,y=random.choice(self.empty)       # Select a random empty cell
         location=(x,y)
-        value=random.choice(new_values)
+        value=random.choice(NEW_VALUES)
         self.empty.remove((x,y))
         self.board[x][y]=value
 

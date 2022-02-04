@@ -2,7 +2,7 @@ from os import system, name
 from Game import Game
 
 # Constants
-valid_inputs=[1,2,3,4]
+VALID_INPUTS=[1,2,3,4]
 N=4
 
 # Function to clear the screen
@@ -27,7 +27,7 @@ while True:        # loop till the game is won or lost
     
     inp=int(input("\n Enter { 1-4 } : "))               # Get input
 
-    if inp not in valid_inputs:        # Check if input is valid
+    if inp not in VALID_INPUTS:        # Check if input is valid
         print("Enter a valid input...")
 
     else:
