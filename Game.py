@@ -1,4 +1,5 @@
 import random
+from math import floor,log10
 
 # Constants 
 new_values=[2,4]
@@ -147,18 +148,22 @@ class Game:
 
 
     # Method for printing the 2048 board
-    def print_board(self):             
+    def print_board(self):      
+        print(f"\n{'-'*29}")       
         for i in range(self.n):
             print("|",end="")
             
             for j in range(self.n):
                 val=self.board[i][j]
-                if val==-1:             # Check if cell is empty. ie., -1 
-                    print("  ",end=" ")
-                else:    
+                if val==-1:                 # Check if cell is empty. ie., -1 
+                    print("     ",end=" ")
+                
+                else:   
+                    digit=floor(log10(val)+1) 
+                    for k in range((4-digit)):
+                        print(" ",end="")
                     print(" ",end="")                                 
-                    print(val,end="")
-                    print(" ",end="")
+                    print(val,end=" ")
                 print("|",end="")
-
-            print("\n")
+            print()
+            print(f"{'-'*29}")       
