@@ -14,7 +14,8 @@ Python 3.x
 
 1. Clone the git repo locally
 
-2. Run the main.py file using the command >*python main.py*
+2. Run the main.py file using the command 
+    >*python main.py*
 
   
 
