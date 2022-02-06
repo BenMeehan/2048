@@ -17,7 +17,7 @@ Python 3.x
 2. Run the main.py file using the command 
     >*python main.py*
 
-  
+
 
 ## Output
 ![first.png](https://i.ibb.co/jkYycg5/Screenshot-13.png)
@@ -26,3 +26,4 @@ Python 3.x
 
 ![third.png](https://i.ibb.co/4S1g9JX/Screenshot-15.png)
 
+![lost.png](https://i.ibb.co/wwWh1Xk/Screenshot-20.png)

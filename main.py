@@ -30,7 +30,7 @@ while True:        # loop till the game is won or lost
     inp = int(input("\n Enter { 1 - 4 } : "))
 
     if inp not in VALID_INPUTS:        # Check if input is valid
-        print("Enter a valid input...")
+        print("Enter a valid input between 1 and 4...")
         sleep(1)
 
     else:
